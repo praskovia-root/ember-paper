@@ -33,9 +33,17 @@ export default PowerSelect.extend(ValidationMixin, ChildMixin, FocusableMixin, {
   validationProperty: 'selected',
   isTouched: false,
   isInvalidAndTouched: and('isInvalid', 'isTouched'),
-  attributeBindings: ['parentTabindex:tabindex'],
+  attributeBindings: ['parentTabindex:tabindex', 'tabindex'],
   shouldShowLabel: and('label', 'selected'),
   focusedAndSelected: and('focused', 'selected'),
+  tabindex: 0,
+  ariaLabelledBy: "test",
+  // labelId: computed('elementId', function() {
+  //     return `${this.elementId}-label`;
+  //   }),
+  // ariaLabelledby: computed('shouldShowLabel', 'labelId', function() {
+  //     return this.get('shouldShowLabel') ? this.get('labelId') : false;
+  //   }),
 
   didReceiveAttrs() {
     this._super(...arguments);
