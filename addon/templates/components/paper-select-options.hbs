@@ -21,7 +21,7 @@
     </md-optgroup>
   {{else}}
     {{#paper-option parentComponent=menuParent class="ember-power-select-option"
-      aria-selected=(ember-power-select-is-selected opt select.selected)
+      aria-selected=(if (ember-power-select-is-selected opt select.selected) "true" "false")
       selected=(if (ember-power-select-is-selected opt select.selected) "selected" undefined)
       aria-disabled=(ember-power-select-true-string-if-present opt.disabled)
       aria-current=(eq opt select.highlighted)
